@@ -1,9 +1,11 @@
+'use client';
+
+import { useState } from 'react';
 import SEO from '@/components/SEO';
 import Image from 'next/image';
 import Link from 'next/link';
 import { CheckIcon, CodeBracketIcon, DevicePhoneMobileIcon, ClockIcon, CurrencyDollarIcon, UserGroupIcon, StarIcon, GlobeAltIcon, ChevronDownIcon } from '@heroicons/react/24/outline';
 import { generateServiceSchema } from '@/lib/schema';
-import { useState } from 'react';
 
 const benefits = [
   {

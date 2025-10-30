@@ -1,9 +1,11 @@
+'use client';
+
+import { useState } from 'react';
 import SEO from '@/components/SEO';
 import Image from 'next/image';
 import Link from 'next/link';
 import { CheckIcon, GlobeAltIcon, UserGroupIcon, StarIcon, ClockIcon, TrophyIcon, ArrowTrendingUpIcon, DevicePhoneMobileIcon, ComputerDesktopIcon, PresentationChartLineIcon, DocumentTextIcon, EnvelopeIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 import { generateServiceSchema } from '@/lib/schema';
-import { useState } from 'react';
 
 const services = [
   {

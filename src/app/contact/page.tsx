@@ -1,3 +1,5 @@
+'use client';
+
 import SEO from '@/components/SEO';
 import ContactForm from '@/components/forms/ContactForm';
 import { MapPinIcon, PhoneIcon, EnvelopeIcon, ClockIcon, ExclamationTriangleIcon, ChatBubbleLeftRightIcon } from '@heroicons/react/24/outline';

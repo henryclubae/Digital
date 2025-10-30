@@ -1,3 +1,5 @@
+'use client';
+
 import SEO from '@/components/SEO';
 import QuoteForm from '@/components/forms/QuoteForm';
 import { CheckIcon, ClockIcon, ShieldCheckIcon, StarIcon, PhoneIcon, EnvelopeIcon, ChatBubbleLeftRightIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
