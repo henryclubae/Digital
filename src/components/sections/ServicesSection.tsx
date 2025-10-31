@@ -25,7 +25,7 @@ const services = [
     ],
     href: '/services/web-development-dubai',
     price: 'Starting from AED 5,000',
-    image: '/images/services/web-development-dubai.jpg'
+    image: '/images/placeholder-service.svg'
   },
   {
     title: 'Digital Marketing UAE',
@@ -39,7 +39,7 @@ const services = [
     ],
     href: '/services/digital-marketing-uae',
     price: 'Starting from AED 3,000/month',
-    image: '/images/services/digital-marketing-uae.jpg'
+    image: '/images/placeholder-service.svg'
   },
   {
     title: 'SEO Services Dubai',
@@ -53,7 +53,7 @@ const services = [
     ],
     href: '/services/seo-services-dubai',
     price: 'Starting from AED 2,500/month',
-    image: '/images/services/seo-services-dubai.jpg'
+    image: '/images/placeholder-service.svg'
   },
   {
     title: 'Amazon FBA UAE',
@@ -67,7 +67,7 @@ const services = [
     ],
     href: '/services/amazon-fba-uae',
     price: 'Starting from AED 4,000/month',
-    image: '/images/services/amazon-fba-uae.jpg'
+    image: '/images/placeholder-service.svg'
   },
   {
     title: 'Social Media Marketing',
@@ -81,7 +81,7 @@ const services = [
     ],
     href: '/services/social-media-marketing',
     price: 'Starting from AED 2,000/month',
-    image: '/images/services/social-media-marketing.jpg'
+    image: '/images/placeholder-service.svg'
   },
   {
     title: 'Email Marketing UAE',
@@ -95,7 +95,7 @@ const services = [
     ],
     href: '/services/email-marketing-uae',
     price: 'Starting from AED 1,500/month',
-    image: '/images/services/email-marketing-uae.jpg'
+    image: '/images/placeholder-service.svg'
   }
 ];
 

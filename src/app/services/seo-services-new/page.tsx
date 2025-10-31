@@ -321,7 +321,7 @@ export default function SEOServicesDubai() {
             
             <div className="relative">
               <Image
-                src="/images/services/local-seo-dubai.jpg"
+                src="/images/placeholder-service.svg"
                 alt="Local SEO Dubai Services"
                 width={600}
                 height={400}
