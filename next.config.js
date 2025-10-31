@@ -14,7 +14,14 @@ const nextConfig = {
 
   // Image optimization configuration
   images: {
-    domains: ['digital.henryclub.ae'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'digital.henryclub.ae',
+        port: '',
+        pathname: '/**',
+      },
+    ],
     formats: ['image/webp', 'image/avif'],
     minimumCacheTTL: 31536000,
     deviceSizes: [640, 768, 1024, 1280, 1600],

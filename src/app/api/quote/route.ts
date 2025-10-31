@@ -2,8 +2,9 @@ import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 import { z } from 'zod';
 import { v4 as uuidv4 } from 'uuid';
-import fs from 'node:fs';
-import path from 'node:path';
+
+// Specify the runtime for Vercel compatibility
+export const runtime = 'nodejs';
 
 // Rate limiting storage (in production, use Redis or a database)
 const quoteLimitStore = new Map<string, { count: number; resetTime: number }>();
@@ -17,7 +18,7 @@ const quoteSchema = z.object({
   situation: z.string().min(10, 'Current situation description must be at least 10 characters'),
   requirements: z.string().min(10, 'Requirements description must be at least 10 characters'),
   name: z.string().min(2, 'Name must be at least 2 characters'),
-  email: z.string().email('Invalid email format'),
+  email: z.string().email({ message: 'Invalid email format' }),
   phone: z.string().min(10, 'Phone number must be at least 10 characters'),
   company: z.string().optional(),
 });
@@ -286,13 +287,8 @@ function generateQuotePDF(data: QuoteData, quote: ReturnType<typeof calculateQuo
 
 // Save quote data (in production, save to database)
 function saveQuoteData(data: QuoteData, quote: ReturnType<typeof calculateQuote>) {
-  const quotesDir = path.join(process.cwd(), 'quotes');
-  
-  // Create quotes directory if it doesn't exist
-  if (!fs.existsSync(quotesDir)) {
-    fs.mkdirSync(quotesDir, { recursive: true });
-  }
-  
+  // For Vercel deployment, we'll log the quote data instead of saving to file system
+  // In production, replace this with database storage (Supabase, MongoDB, etc.)
   const quoteRecord = {
     ...quote,
     customerData: data,
@@ -300,12 +296,12 @@ function saveQuoteData(data: QuoteData, quote: ReturnType<typeof calculateQuote>
     followUpDate: new Date(Date.now() + 2 * 24 * 60 * 60 * 1000) // 2 days for follow-up
   };
   
-  fs.writeFileSync(
-    path.join(quotesDir, `quote-${quote.quoteId}.json`),
-    JSON.stringify(quoteRecord, null, 2)
-  );
-  
+  // Log quote data for now (replace with database in production)
   console.log(`[QUOTE] ${new Date().toISOString()} - Quote ${quote.quoteId} saved for ${data.name} (${data.email})`);
+  console.log('Quote Data:', JSON.stringify(quoteRecord, null, 2));
+  
+  // TODO: Replace with database storage in production
+  // Example: await db.quotes.create(quoteRecord);
 }
 
 // Customer quote email template
