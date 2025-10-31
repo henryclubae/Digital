@@ -878,5 +878,4 @@ export const getServiceById = (id: string): Service | undefined => {
   return services.find(service => service.id === id);
 };
 
-// Export types for use in other components
-export type { Service, ServicePricingTier, ServiceProcess, ServiceFAQ };
+// Types are already exported with their interface declarations above
